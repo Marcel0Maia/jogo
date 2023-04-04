@@ -1,4 +1,10 @@
+body{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
 canvas{
-    background-color: aqua;
-    border: 1px solid black;
+    background-image: url(images/tabuleiro.jpg);
+    background-size: cover;
 }
