@@ -1,5 +1,35 @@
+var whitePiece = [
+    "piece1",
+    "piece2",
+    "piece3",
+    "piece4",
+    "piece5",
+    "piece6",
+    "piece7",
+    "piece8",
+    "piece9",
+    "piece10",
+    "piece11",
+    "piece12"
+];
+var blackPiece = [
+    "piece1",
+    "piece2",
+    "piece3",
+    "piece4",
+    "piece5",
+    "piece6",
+    "piece7",
+    "piece8",
+    "piece9",
+    "piece10",
+    "piece11",
+    "piece12"
+];
+
 function iniciar(){
     myGameArea.start(); 
+    
 }
 
 var myGameArea = {
@@ -12,7 +42,7 @@ start : function() {
 }
 }
 
-    function peça(){
+    function piece(){
         this.x = x;
         this.y = y;
     }
