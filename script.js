@@ -71,7 +71,3 @@ function piece(x, y, width, height, color, lineWidth){
     }
 }   
 
-function upGameArea(){
-    myGameArea.clear();
-    whitePiece[0].up();
-}
