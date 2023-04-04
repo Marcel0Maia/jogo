@@ -41,8 +41,3 @@ start : function() {
     document.body.insertBefore(this.canvas, document.body.childNodes[0]);
 }
 }
-
-    function piece(){
-        this.x = x;
-        this.y = y;
-    }
