@@ -2,7 +2,7 @@ var teste;
 
 function iniciar(){
     myGameArea.start();
-    teste = new piece(0, 0, 30, 30, "red");
+    teste = new piece(27, 23, 59, 59, "red");
 }
 
 var myGameArea = {
