@@ -1,5 +1,8 @@
+var teste;
+
 function iniciar(){
-    myGameArea.start(); 
+    myGameArea.start();
+    teste = new piece(0, 0, 30, 30, "red");
 }
 
 var myGameArea = {
@@ -12,7 +15,12 @@ start : function() {
 }
 }
 
-    function peça(){
-        this.x = x;
-        this.y = y;
-    }
+function piece(x, y, width, height, color){
+this.x = x;
+this.y = y;
+this.width = width;
+this.height = height;  
+ctx = myGameArea.context;
+ctx.fillStyle = color;
+ctx.fillRect(this.x, this.y, this.width, this.height);
+}
