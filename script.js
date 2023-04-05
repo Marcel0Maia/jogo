@@ -27,13 +27,55 @@ var blackPiece = [
     "piece12"
 ];
 
-    
+var coluna = [
+    56,
+    113,
+    168,
+    224,
+    280,
+    336,
+    390,
+    447
+];
+var linha = [
+    53,
+    110,
+    166,
+    222,
+    277,
+    332,
+    387,
+    443
+];
 
 
 function iniciar(){
     myGameArea.start();
-    whitePiece[0] = new piece(56, 53, 0, 0, "white", 3);
-    
+    whitePiece[0] = new piece(coluna[0], linha[0], 0, 0, "white", 3);
+    whitePiece[1] = new piece(coluna[2], linha[0], 0, 0, "white", 3);
+    whitePiece[2] = new piece(coluna[4], linha[0], 0, 0, "white", 3);
+    whitePiece[3] = new piece(coluna[6], linha[0], 0, 0, "white", 3);
+    whitePiece[4] = new piece(coluna[1], linha[1], 0, 0, "white", 3);
+    whitePiece[5] = new piece(coluna[3], linha[1], 0, 0, "white", 3);
+    whitePiece[6] = new piece(coluna[5], linha[1], 0, 0, "white", 3);
+    whitePiece[7] = new piece(coluna[7], linha[1], 0, 0, "white", 3);
+    whitePiece[8] = new piece(coluna[0], linha[2], 0, 0, "white", 3);
+    whitePiece[9] = new piece(coluna[2], linha[2], 0, 0, "white", 3);
+    whitePiece[10] = new piece(coluna[4], linha[2], 0, 0, "white", 3);
+    whitePiece[11] = new piece(coluna[6], linha[2], 0, 0, "white", 3);
+
+    blackPiece[0] = new piece(coluna[0], linha[5], 0, 0, "black", 3);
+    blackPiece[1] = new piece(coluna[2], linha[5], 0, 0, "black", 3);
+    blackPiece[2] = new piece(coluna[4], linha[5], 0, 0, "black", 3);
+    blackPiece[3] = new piece(coluna[6], linha[5], 0, 0, "black", 3);
+    blackPiece[4] = new piece(coluna[1], linha[6], 0, 0, "black", 3);
+    blackPiece[5] = new piece(coluna[3], linha[6], 0, 0, "black", 3);
+    blackPiece[6] = new piece(coluna[5], linha[6], 0, 0, "black", 3);
+    blackPiece[7] = new piece(coluna[7], linha[6], 0, 0, "black", 3);
+    blackPiece[8] = new piece(coluna[0], linha[7], 0, 0, "black", 3);
+    blackPiece[9] = new piece(coluna[2], linha[7], 0, 0, "black", 3);
+    blackPiece[10] = new piece(coluna[4], linha[7], 0, 0, "black", 3);
+    blackPiece[11] = new piece(coluna[6], linha[7], 0, 0, "black", 3);
 }
 
 var myGameArea = {
@@ -65,7 +107,7 @@ function piece(x, y, width, height, color, lineWidth){
         ctx.fillRect(this.x, this.y, this.width, this.height);
         ctx.beginPath();
         ctx.lineWidth = lineWidth;
-        ctx.arc(x, y, 28, 0, 2 * Math.PI,);
+        ctx.arc(this.x, this.y, 26, 0, 2 * Math.PI,);
         ctx.fill()
         ctx.stroke();
     }
@@ -73,5 +115,8 @@ function piece(x, y, width, height, color, lineWidth){
 
 function upGameArea(){
     myGameArea.clear();
-    whitePiece[0].up();
+    for (let p = 0; p < 12; p++) {  
+    whitePiece[p].up();
+    blackPiece[p].up();
+    }
 }
