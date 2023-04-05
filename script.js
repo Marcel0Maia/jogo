@@ -75,7 +75,6 @@ function iniciar(){
     blackPiece[8] = new piece(coluna[0], linha[7], 0, 0, "black", 3);
     blackPiece[9] = new piece(coluna[2], linha[7], 0, 0, "black", 3);
     blackPiece[10] = new piece(coluna[4], linha[7], 0, 0, "black", 3);
-    blackPiece[11] = new piece(coluna[6], linha[7], 0, 0, "black", 3);
 }
 
 var myGameArea = {
