@@ -3,8 +3,22 @@ body{
     display: flex;
     flex-direction: column;
 }
-
-canvas{
-    background-image: url(images/tabuleiro.jpg);
-    background-size: cover;
+.tabuleiro {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 600px;
+    height: 600px;
+    flex-wrap: wrap;
+    border: 3px solid black;
+ 
+}
+.casa{
+    border: 1px solid black;
+    margin: 0px;
+    width: 73px;
+    height: 73px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
