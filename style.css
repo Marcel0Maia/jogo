@@ -1,7 +1,7 @@
 #tabuleiro{
     width: 400px;
     height: 400px;
-    border: 1px solid black;
+    border: 3px solid black;
 }
 
 .linha{
@@ -24,5 +24,11 @@
 }
 
 .casa_selecionada{
+    background-color: red;
+}
+.peca{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
     background-color: red;
 }

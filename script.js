@@ -9,6 +9,7 @@ function montar_tab(){
 
         for (let j = 0; j < 8; j++) {
             var nome_casa = "casa_" + i.toString() + "_" + j.toString();
+            var casaPreta = false;
 
             $("#linha_"+i.toString()).append("<div id = '" + nome_casa + "' class = 'casa'>");//adiciona as casas
 
@@ -18,17 +19,26 @@ function montar_tab(){
                     $("#"+nome_casa.toString()).addClass("casa_b");                
                 }else if(j % 2 != 0){
                     $("#"+nome_casa.toString()).addClass("casa_p");
+                    casaPreta = true;
                 }
             }else if(i % 2 != 0){                
                 if(j % 2 == 0){
                     $("#"+nome_casa.toString()).addClass("casa_p");                
+                    casaPreta = true;
                 }else if(j % 2 != 0){
                     $("#"+nome_casa.toString()).addClass("casa_b");
+                }
+            }
+            
+            if(casaPreta === false) {
+                if(i < 3 || i > 4 ) {
+                    $("#"+nome_casa.toString()).addClass("peca");
                 }
             }
         }
     }
 }
+
 
 function selecionar_casa(){
     var casa_selecionada = null;
