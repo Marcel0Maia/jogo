@@ -12,6 +12,7 @@ function montar_tab(){
 
             $("#linha_"+i.toString()).append("<div id = '" + nome_casa + "' class = 'casa'>");//adiciona as casas
 
+            //muda a cor da casa
             if (i % 2 == 0){
                 if(j % 2 == 0){
                     $("#"+nome_casa.toString()).addClass("casa_b");                
