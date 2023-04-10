@@ -32,7 +32,10 @@ function montar_tab(){
             
             if(casaPreta === true) {
                 if(i < 3) {
-                    $("#"+nome_casa.toString()).append("<img src='/images/pecaBranca.svg' >");
+                    $("#"+nome_casa.toString()).append("<img src='/images/pecaBranca.svg' class = 'peca'>");
+                }else if(i > 4){
+                    $("#"+nome_casa.toString()).append("<img src='/images/pecaPreta.svg' class = 'peca'>");
+
                 }
             }
         }
