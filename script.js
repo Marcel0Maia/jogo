@@ -32,7 +32,7 @@ function montar_tab(){
             
             if(casaPreta === false) {
                 if(i < 3 || i > 4 ) {
-                    $("#"+nome_casa.toString()).addClass("peca");
+                    $("#"+nome_casa.toString()).append("<img src='/images/rainhaBranca.svg' class= 'peca'>");
                 }
             }
         }
