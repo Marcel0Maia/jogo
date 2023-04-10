@@ -1,35 +1,40 @@
-const board = document.querySelector(".tabuleiro");
-var tabuleiro = [];
+$(document).ready(function(){
+    montar_tab();
+    selecionar_casa();
+});
 
+function montar_tab(){
+    for (let i = 0; i < 8; i++) {
+        $("#tabuleiro").append("<div id = 'linha_" + i.toString() + "' class = 'linha' >");//adiciona as linhas
 
-function drawBoard() {
-    for(let i = 0; i < 8; i++){
-        for(let j = 0; j < 8; j++){
-            let casa = document.createElement("div");
-            casa.setAttribute("id", `i${i}j${j}`);
-            casa.setAttribute("class", "casa");
-            board.appendChild(casa);
+        for (let j = 0; j < 8; j++) {
+            var nome_casa = "casa_" + i.toString() + "_" + j.toString();
 
-            if(i % 2 == 0) {
+            $("#linha_"+i.toString()).append("<div id = '" + nome_casa + "' class = 'casa'>");//adiciona as casas
+
+            if (i % 2 == 0){
                 if(j % 2 == 0){
-                    casa.style.backgroundColor = "white";
-                    casa.style.color = "black"
-                } else {
-                    casa.style.backgroundColor = "black";
-                    casa.style.color = "white"
+                    $("#"+nome_casa.toString()).addClass("casa_b");                
+                }else if(j % 2 != 0){
+                    $("#"+nome_casa.toString()).addClass("casa_p");
                 }
-            } else {
+            }else if(i % 2 != 0){                
                 if(j % 2 == 0){
-                    casa.style.backgroundColor = "black";
-                    casa.style.color = "white"
-                } else {
-                    casa.style.backgroundColor = "white";
-                    casa.style.color = "black"
+                    $("#"+nome_casa.toString()).addClass("casa_p");                
+                }else if(j % 2 != 0){
+                    $("#"+nome_casa.toString()).addClass("casa_b");
                 }
             }
-            //casa.innerHTML= `L${i}C${j}`
         }
     }
 }
 
-drawBoard();
+function selecionar_casa(){
+    var casa_selecionada = null;
+    
+    $(".casa").click(function(){
+    $("#"+casa_selecionada).removeClass("casa_selecionada");
+    casa_selecionada = $(this).attr("id");
+    $("#"+casa_selecionada).addClass("casa_selecionada");
+})
+}

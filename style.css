@@ -1,24 +1,28 @@
-body{
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-}
-.tabuleiro {
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    width: 600px;
-    height: 600px;
-    flex-wrap: wrap;
-    border: 3px solid black;
- 
-}
-.casa{
+#tabuleiro{
+    width: 400px;
+    height: 400px;
     border: 1px solid black;
-    margin: 0px;
-    width: 73px;
-    height: 73px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+}
+
+.linha{
+    height: 50px;
+}
+
+.casa{
+    width: 50px;
+    height: 100%;
+    float: left;
+    cursor: pointer;
+}
+
+.casa_b{
+    background-color: white;
+}
+
+.casa_p{
+    background-color: black;
+}
+
+.casa_selecionada{
+    background-color: red;
 }
