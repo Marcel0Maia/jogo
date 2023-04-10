@@ -17,6 +17,7 @@
 
 .casa_b{
     background-color: white;
+    cursor: auto;
 }
 
 .casa_p{
@@ -24,9 +25,20 @@
 }
 
 .casa_selecionada{
-    background-color: red;
+    opacity: 0.7;
+    background-color: #DEB887;
 }
 .peca{
     width: 50px;
     height: 50px;
+}
+.temBolaPreta{
+    background-image: url(/images/pecaPreta.svg);
+    background-size: 50px;
+    background-repeat: no-repeat;
+}
+.temBolaBranca{
+    background-image: url(/images/pecaBranca.svg);
+    background-size: 50px;
+    background-repeat: no-repeat;
 }

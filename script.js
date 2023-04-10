@@ -32,9 +32,9 @@ function montar_tab(){
             
             if(casaPreta === true) {
                 if(i < 3) {
-                    $("#"+nome_casa.toString()).append("<img src='/images/pecaPreta.svg' class = 'peca'>");
+                    $("#"+nome_casa.toString()).addClass("temBolaPreta");
                 }else if(i > 4){
-                    $("#"+nome_casa.toString()).append("<img src='/images/pecaBranca.svg' class = 'peca'>");
+                    $("#"+nome_casa.toString()).addClass("temBolaBranca");
                 }
             }
         }
@@ -44,10 +44,25 @@ function montar_tab(){
 
 function selecionar_casa(){
     var casa_selecionada = null;
+    $(".casa_p").click(function(){
+        $("#"+casa_selecionada).removeClass("casa_selecionada");
+        casa_selecionada = $(this).attr("id");
+        $("#"+casa_selecionada).addClass("casa_selecionada");
+
+        casaPreenchida = false;
+
+        if($("#"+casa_selecionada).hasClass("temBolaBranca")){
+            if(casaPreenchida === false){
+                $("#"+casa_selecionada).removeClass("temBolaBranca");
+                casaPreenchida = true;
+            }
+        }else{
+            if(casaPreenchida === false){
+                $("#"+casa_selecionada).addClass("temBolaBranca");
+                casaPreenchida = true;
+            }
+        }
+    })
+
     
-    $(".casa").click(function(){
-    $("#"+casa_selecionada).removeClass("casa_selecionada");
-    casa_selecionada = $(this).attr("id");
-    $("#"+casa_selecionada).addClass("casa_selecionada");
-})
 }
