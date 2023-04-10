@@ -30,9 +30,11 @@ function montar_tab(){
                 }
             }
             
-            if(casaPreta === false) {
-                if(i < 3 || i > 4 ) {
-                    $("#"+nome_casa.toString()).append("<img src='/images/rainhaBranca.svg' class= 'peca'>");
+            if(casaPreta === true) {
+                if(i < 3) {
+                    $("#"+nome_casa.toString()).append("<img src='/images/pecaPreta.svg' class = 'peca'>");
+                }else if(i > 4){
+                    $("#"+nome_casa.toString()).append("<img src='/images/pecaBranca.svg' class = 'peca'>");
                 }
             }
         }
