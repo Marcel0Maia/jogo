@@ -44,10 +44,16 @@ function montar_tab(){
 
 function selecionar_casa(){
     var casa_selecionada = null;
-    
-    $(".casa").click(function(){
+    var peca_selecionada = null;
+
+    $(".casa_p").click(function(){
     $("#"+casa_selecionada).removeClass("casa_selecionada");
+    $("#"+casa_selecionada).children("img").removeClass("peca_seleciona");
+
+    casa_anterior = casa_selecionada;
     casa_selecionada = $(this).attr("id");
     $("#"+casa_selecionada).addClass("casa_selecionada");
-})
+        
+    $("#"+casa_selecionada).children("img").addClass("peca_seleciona");
+    })
 }
