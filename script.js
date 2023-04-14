@@ -46,14 +46,31 @@ function selecionar_casa(){
     var casa_selecionada = null;
     var peca_selecionada = null;
 
-    $(".casa_p").click(function(){
-    $("#"+casa_selecionada).removeClass("casa_selecionada");
-    $("#"+casa_selecionada).children("img").removeClass("peca_seleciona");
 
-    casa_anterior = casa_selecionada;
+    $(".casa_p").click(function(){
+    
+    //pega as coordenadas da peca selecionada e as coordenadas da proxima casa
+    if(peca_selecionada != null){
+        var anteriorI = parseInt(casa_selecionada.substr(5, 1));
+        var anteriorJ = parseInt(casa_selecionada.substr(7, 1));
+    
+        var coorI = parseInt($(this).attr("id").substr(5, 1));
+        var coorJ = parseInt($(this).attr("id").substr(7, 1));
+
+        var dI = parent((anteriorI - coorI) < 0? (anteriorI - coorI)*(-1): (anteriorI - coorI));
+        var dJ = parent((anteriorJ - coorJ) < 0? (anteriorJ - coorJ)*(-1): (anteriorJ - coorJ));
+    }
+
+    $("#"+casa_selecionada).removeClass("casa_selecionada");
+    var casa_anterior = casa_selecionada;
+    var peca_anterior = peca_selecionada;
     casa_selecionada = $(this).attr("id");
     $("#"+casa_selecionada).addClass("casa_selecionada");
+    peca_selecionada = $("#"+casa_selecionada).attr("id");
+
+    if(peca_selecionada == null){
         
-    $("#"+casa_selecionada).children("img").addClass("peca_seleciona");
+    }
+
     })
 }
